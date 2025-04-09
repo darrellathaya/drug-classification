@@ -4,7 +4,7 @@ import skops.io as sio
 pipe = sio.load("./Model/drug_pipeline.skops", trusted=sio.get_untrusted_types(file="./Model/drug_pipeline.skops"))
 
 def predict_drug(age, sex, blood_pressure, cholesterol, na_to_k_ratio):
-"""Predict drugs based on patient features.
+    """Predict drugs based on patient features.
     Args:
         age (int): Age of patient
         sex (str): Sex of patient
@@ -13,9 +13,9 @@ def predict_drug(age, sex, blood_pressure, cholesterol, na_to_k_ratio):
         na_to_k_ratio (float): Ratio of sodium to potassium in blood
     Returns:
         str: Predicted drug label  
-"""
+    """
 
-features = [age, sex, blood_pressure, cholesterol, na_to_k_ratio]
+    features = [age, sex, blood_pressure, cholesterol, na_to_k_ratio]
     predicted_drug = pipe.predict([features])[0]
     label = f"Predicted Drug: {predicted_drug}"
     return label
@@ -37,8 +37,7 @@ examples = [
 
 title = "Drug Classification"
 description = "Enter the details to correctly identify Drug type?"
-article = "This app is a part of the Beginner's Guide to CI/CD for Machine Learning. It teaches how to
-automate training, evaluation, and deployment of models to Hugging Face using GitHub Actions."
+article = "This app is a part of the Beginner's Guide to CI/CD for Machine Learning. It teaches how to automate training, evaluation, and deployment of models to Hugging Face using GitHub Actions."
 
 gr.Interface(
     fn=predict_drug,
