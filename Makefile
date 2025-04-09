@@ -34,6 +34,5 @@ update-branch:
 		huggingface-cli upload <UserNameHF>/Drug-Classification ./Model /Model --repo-type=space --commit-message=
 		"Sync Model"
 		huggingface-cli upload <UserNameHF>/Drug-Classification ./Results /Metrics --repo-type=space --commit-message=
-		"Sync
-	Model"
+		"Sync Model"
 	deploy: hf-login push-hub
